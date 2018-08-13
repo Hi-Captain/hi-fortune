@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Output extends Component {
-  render() {
-    return (
-      <div>
-        Output
-      </div>
-    );
-  }
+const Output = ({picked, pickItem}) => {
+  return (
+    <div>
+      <button onClick={pickItem}>Go</button>
+      <div>{picked}</div>
+    </div>
+  );
 }
 
 export default Output;

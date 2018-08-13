@@ -1,0 +1,12 @@
+.App {
+  font-size: 1.6rem;
+
+  width: 45rem;
+  height: 70rem;
+  border: 1px solid #333;
+}
+
+.App > * {
+  border: 1px solid #999;
+  margin: 1rem;
+}
