@@ -17,3 +17,9 @@ Make Lottery machine with React
               typing, add, pick 기능 추가
   - idea : 일단 추첨에 필요한 기본적인 기능들을 넣어봤는데, 생각보다 잘 들어간거 같다.
            레이아웃 좀 고민해보고 CSS로 기본 골격 잡은 다음에 좀 더 재미있게 가지고 놀아보자.
+
+> 2018.08.14
+  - title : CSS
+  - content : CSS파일 생성, 레이아웃 정리
+              _PickItem 에서 돌리는 효과 설정
+  - idea : 추가 기능 고민하면서 레이아웃이랑 메인컬러도 좀 더 고민해봐야겠다.

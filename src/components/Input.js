@@ -1,4 +1,5 @@
 import React from 'react';
+import '../css/Input.css';
 
 const Input = ({ value, typing, addItem }) => {
 
@@ -8,9 +9,9 @@ const Input = ({ value, typing, addItem }) => {
     }
   }
   return (
-    <div className="input">
-      <input type="text" onChange={typing} value={value} onKeyPress={enterKey}/>
-      <button onClick={addItem}>Add</button>
+    <div className="input-wrap">
+      <input className="input" type="text" onChange={typing} value={value} onKeyPress={enterKey}/>
+      <button className="btn btn-add" onClick={addItem}>Add</button>
     </div>
   );
 }

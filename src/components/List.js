@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Item from './Item';
+import '../css/List.css'
 
 class List extends Component {
   render() {
@@ -8,7 +9,7 @@ class List extends Component {
       return <Item key={i}>{value}</Item>
     })
     return (
-      <div>
+      <div className="list-wrap">
         {items}
       </div>
     );

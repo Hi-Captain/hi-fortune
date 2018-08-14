@@ -1,12 +1,41 @@
 .App {
-  font-size: 1.6rem;
-
-  width: 45rem;
+  width: 80rem;
   height: 70rem;
-  border: 1px solid #333;
+  font-size: 1.6rem;
+  background: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.App > * {
-  border: 1px solid #999;
-  margin: 1rem;
+header{
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  background: rgb(250, 214, 12);
+}
+
+section{
+  display: flex;
+  flex-direction: row;
+  height: calc(100% - 6rem);
+}
+section > div {
+  flex: 1;
+  padding: 2rem;
+}
+
+.right{
+  display: flex;
+  flex-direction: column;
 }

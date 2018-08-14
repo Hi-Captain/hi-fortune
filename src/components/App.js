@@ -29,10 +29,15 @@ class App extends Component {
   _PickItem = (e) => {
     const { list } = this.state;
     if( list.length > 0 ) {
-      const pickNum = Math.floor(Math.random() * list.length);
-      this.setState({
-        picked : list[pickNum]
-      })
+      this.interval = setInterval(() => {
+        const pickNum = Math.floor(Math.random() * list.length);
+        this.setState({
+          picked : list[pickNum]
+        })
+      }, 50)
+      this.timeOut = setTimeout(() => {
+        clearInterval(this.interval)
+      }, 2000)
       e.target.remove()
     } else {
       alert('리스트를 채워주세요')
@@ -45,9 +50,16 @@ class App extends Component {
     
     return (
       <div className="App">
-        <Input value={input} typing={_Typing} addItem={_AddItem}/>
-        <List list={list}/>
-        <Output picked={picked} pickItem={_PickItem}/>
+        <header>Hi-Fortune</header>
+        <section>
+          <div className="left">
+            <List list={list}/>
+          </div>
+          <div className="right">
+            <Input value={input} typing={_Typing} addItem={_AddItem}/>
+            <Output picked={picked} pickItem={_PickItem}/>
+          </div>
+        </section>
       </div>
     );
   }

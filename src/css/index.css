@@ -23,14 +23,14 @@ html {
   position: relative;
   z-index: 1;
 
-  /* background-image: url(./img/bg.jpg);
+  background-image: url(../img/bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  background-position: center; */
+  background-position: center;
 }
 
-/* html::before{
+html::before{
   content: '';
   position: absolute;
   left: 0;
@@ -40,5 +40,5 @@ html {
   opacity: .65;
   z-index: -1;
 
-  background: #fff;
-} */
+  background: #111;
+}

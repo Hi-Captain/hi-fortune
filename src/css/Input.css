@@ -1,0 +1,27 @@
+.input-wrap{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.input{
+  width: 25rem;
+  height: 4rem;
+  outline: none;
+  padding: 1rem;
+  font-size: 2rem;
+}
+
+.btn{
+  border: none;
+  padding: 1rem 2rem;
+  background: rgb(250, 214, 12);
+  color: #fff;
+  font-size: 2rem;
+  outline: none;
+}
+
+.btn-add{
+  width: 10rem;
+  height: 4rem;
+}
