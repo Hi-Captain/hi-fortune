@@ -1,8 +1,25 @@
 .output-wrap{
-  flex: auto;
+  height: 15rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.output{
+  border: 1px solid rgb(250, 214, 12);
+  border-radius: 1rem;
+  height: 9.5rem;
+  margin-bottom: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 5rem;
+  font-size: 2.6rem;
   font-weight: 900;
+}
+
+.output__btn{
+  border-radius: 1rem;
+}
+
+.btn-stop{
+  background: rgb(223, 0, 0);
 }

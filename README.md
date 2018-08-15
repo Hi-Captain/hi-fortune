@@ -23,3 +23,14 @@ Make Lottery machine with React
   - content : CSS파일 생성, 레이아웃 정리
               _PickItem 에서 돌리는 효과 설정
   - idea : 추가 기능 고민하면서 레이아웃이랑 메인컬러도 좀 더 고민해봐야겠다.
+
+> 2018.08.15
+- title : Fix CSS, Function
+- content : bg 용량 줄이기,
+            Pick 기능 Roll & Pick 으로 변경,
+            AddItem 빈문자 입력 방지,
+            AddItem 중복item 입력 방지,
+            List overflow auto 설정,
+            레이아웃 정리
+- idea : List index 넣고 삭제기능 추가할 것.
+         Proptype 활용하고 퍼포먼스 최적화 고민해보기.

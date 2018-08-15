@@ -1,15 +1,24 @@
 .input-wrap{
+  width: 100%;
   display: flex;
   justify-content: center;
-  margin-bottom: 3rem;
+  border: 1px solid rgb(250, 214, 12);
+  border-radius: 1rem;
+  overflow: hidden;
 }
 
 .input{
-  width: 25rem;
+  flex: 1;
   height: 4rem;
   outline: none;
   padding: 1rem;
   font-size: 2rem;
+  border:none;
+}
+
+.dupl{
+  background: rgb(250, 214, 12);
+  color: white;
 }
 
 .btn{
@@ -19,6 +28,8 @@
   color: #fff;
   font-size: 2rem;
   outline: none;
+  cursor: pointer;
+  line-height: 2rem;
 }
 
 .btn-add{

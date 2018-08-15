@@ -10,7 +10,7 @@ const Input = ({ value, typing, addItem }) => {
   }
   return (
     <div className="input-wrap">
-      <input className="input" type="text" onChange={typing} value={value} onKeyPress={enterKey}/>
+      <input className="input" type="text" maxLength="15" onChange={typing} value={value} onKeyPress={enterKey}/>
       <button className="btn btn-add" onClick={addItem}>Add</button>
     </div>
   );
