@@ -29,7 +29,7 @@ class App extends Component {
     const { input, list } = this.state;
     if(input !== ''){
       if(list.indexOf(input) > -1){
-        alert('중복 값은 리스트로 추가할 수 없습니다.')
+        alert(input + '는(은) 이미 입력되었습니다. 중복 값은 리스트로 추가할 수 없습니다.')
       } else {
         this.setState({
           input : '',
@@ -39,6 +39,16 @@ class App extends Component {
     } else {
       alert('공백은 리스트로 추가할 수 없습니다.')
     }
+  }
+
+  _DelItem = (index) => {
+    const { list } = this.state;
+    this.setState({
+      list : [
+        ...list.slice(0, index),
+        ...list.splice(index + 1, list.length)
+      ]
+    })
   }
 
   _RollItem = () => {
@@ -65,14 +75,14 @@ class App extends Component {
 
   render() {
     const { input, list, picked, isRolling } = this.state;
-    const { _Typing, _AddItem, _RollItem, _PickItem } = this;
+    const { _Typing, _AddItem, _DelItem, _RollItem, _PickItem } = this;
     
     return (
       <div className="App">
         <header>Hi-Fortune</header>
         <section>
           <Input value={input} typing={_Typing} addItem={_AddItem}/>
-          <List list={list}/>
+          <List list={list} delItem={_DelItem}/>
           <Output picked={picked} rollItem={_RollItem} pickItem={_PickItem} isRolling={isRolling}/>
         </section>
       </div>

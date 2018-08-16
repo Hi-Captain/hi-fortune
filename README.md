@@ -34,3 +34,12 @@ Make Lottery machine with React
             레이아웃 정리
 - idea : List index 넣고 삭제기능 추가할 것.
          Proptype 활용하고 퍼포먼스 최적화 고민해보기.
+
+> 2018.08.16
+  - title : Decorate Item & Finish..?
+  - content : Del 기능 추가,
+              input placeholer 설정,
+              중복값 경고문 수정,
+              picked 값 애니매이션 설정,
+              proptype 설정
+  - idea : 다 된 것 같은데 .. 뭔가 조금 아쉬운데..?
