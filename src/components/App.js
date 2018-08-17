@@ -33,7 +33,7 @@ class App extends Component {
       } else {
         this.setState({
           input : '',
-          list : [...list, input]
+          list : [input, ...list]
         })
       }
     } else {
@@ -42,18 +42,34 @@ class App extends Component {
   }
 
   _DelItem = (index) => {
-    const { list } = this.state;
-    this.setState({
-      list : [
-        ...list.slice(0, index),
-        ...list.splice(index + 1, list.length)
-      ]
-    })
+    if(this.state.isRolling){
+      alert('STOP 버튼을 먼저 눌러주세요')
+    } else {
+      const { list } = this.state;
+      this.setState({
+        list : [
+          ...list.slice(0, index),
+          ...list.splice(index + 1, list.length)
+        ],
+        picked : '?'
+      })
+    }
+  }
+
+  _ClearItem = () => {
+    if(this.state.isRolling){
+      alert('STOP 버튼을 먼저 눌러주세요')
+    } else {
+      this.setState({
+        list : [],
+        picked : '?'
+      })
+    }
   }
 
   _RollItem = () => {
     const { list } = this.state;
-    if( list.length > 0 ) {
+    if( list.length > 1 ) {
       this.interval = setInterval(() => {
         const pickNum = Math.floor(Math.random() * list.length);
         this.setState({
@@ -62,7 +78,7 @@ class App extends Component {
         })
       }, 50)
     } else {
-      alert('리스트를 채워주세요')
+      alert('리스트를 2개 이상 채워주세요')
     }
   }
 
@@ -75,14 +91,14 @@ class App extends Component {
 
   render() {
     const { input, list, picked, isRolling } = this.state;
-    const { _Typing, _AddItem, _DelItem, _RollItem, _PickItem } = this;
+    const { _Typing, _AddItem, _DelItem, _RollItem, _PickItem, _ClearItem } = this;
     
     return (
       <div className="App">
         <header>Hi-Fortune</header>
         <section>
           <Input value={input} typing={_Typing} addItem={_AddItem}/>
-          <List list={list} delItem={_DelItem}/>
+          <List list={list} delItem={_DelItem} clearItem={_ClearItem}/>
           <Output picked={picked} rollItem={_RollItem} pickItem={_PickItem} isRolling={isRolling}/>
         </section>
       </div>

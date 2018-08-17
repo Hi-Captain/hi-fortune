@@ -7,17 +7,23 @@ class List extends Component {
   
   static propTypes = {
     list : PropTypes.array,
-    delItem : PropTypes.func
+    delItem : PropTypes.func,
+    clearItem :PropTypes.func
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return this.props.list !== nextProps.list
   }
 
   render() {
-    const { list, delItem } = this.props
+    const { list, delItem, clearItem } = this.props
     const items = list.map((value, i) => {
-      return <Item key={i} index={i + 1} delItem={() => {delItem(i)}}>{value}</Item>
+      return <Item key={i} index={list.length - i} delItem={() => {delItem(i)}}>{value}</Item>
     })
     return (
       <div className="list-wrap">
-        {items}
+        <div className="list">{items}</div>
+        <button className="btn btn-clear" onClick={clearItem}>Clear</button>
       </div>
     );
   }
