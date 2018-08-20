@@ -26,18 +26,22 @@ class App extends Component {
   }
 
   _AddItem = () => {
-    const { input, list } = this.state;
-    if(input !== ''){
-      if(list.indexOf(input) > -1){
-        alert(input + '는(은) 이미 입력되었습니다. 중복 값은 리스트로 추가할 수 없습니다.')
-      } else {
-        this.setState({
-          input : '',
-          list : [input, ...list]
-        })
-      }
+    const { input, list, isRolling } = this.state;
+    if(isRolling){
+      alert('STOP 버튼을 먼저 눌러주세요')
     } else {
-      alert('공백은 리스트로 추가할 수 없습니다.')
+      if(input !== ''){
+        if(list.indexOf(input) > -1){
+          alert(input + '는(은) 이미 입력되었습니다. 중복 값은 리스트로 추가할 수 없습니다.')
+        } else {
+          this.setState({
+            input : '',
+            list : [input, ...list]
+          })
+        }
+      } else {
+        alert('공백은 리스트로 추가할 수 없습니다.')
+      } 
     }
   }
 
@@ -71,12 +75,20 @@ class App extends Component {
     const { list } = this.state;
     if( list.length > 1 ) {
       this.interval = setInterval(() => {
-        const pickNum = Math.floor(Math.random() * list.length);
+        const { picked } = this.state;
+        let pickNum = Math.floor(Math.random() * list.length);
+        console.log("처음: " + pickNum)
+        while(picked === list[pickNum]){
+          pickNum = Math.floor(Math.random() * list.length);
+          console.log("수정: " + pickNum)
+        }
         this.setState({
           picked : list[pickNum],
           isRolling : true
         })
-      }, 50)
+        console.log("완료: " + pickNum)
+        console.log("")
+      }, 40)
     } else {
       alert('리스트를 2개 이상 채워주세요')
     }
