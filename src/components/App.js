@@ -15,7 +15,7 @@ class App extends Component {
   _Typing = (e) => {
     const { list } = this.state
     const { value } = e.target
-    if(list.indexOf(value) > -1){
+    if(list.indexOf(value.trim()) > -1){
       e.target.classList.add('dupl')
     } else {
       e.target.classList.remove('dupl')
@@ -31,12 +31,13 @@ class App extends Component {
       alert('STOP 버튼을 먼저 눌러주세요')
     } else {
       if(input !== ''){
-        if(list.indexOf(input) > -1){
-          alert(input + '는(은) 이미 입력되었습니다. 중복 값은 리스트로 추가할 수 없습니다.')
+        const text = input.trim()
+        if(list.indexOf(text) > -1){
+          alert(text + '는(은) 이미 입력되었습니다. 중복 값은 리스트로 추가할 수 없습니다.')
         } else {
           this.setState({
             input : '',
-            list : [input, ...list]
+            list : [text, ...list]
           })
         }
       } else {
@@ -77,17 +78,13 @@ class App extends Component {
       this.interval = setInterval(() => {
         const { picked } = this.state;
         let pickNum = Math.floor(Math.random() * list.length);
-        console.log("처음: " + pickNum)
         while(picked === list[pickNum]){
           pickNum = Math.floor(Math.random() * list.length);
-          console.log("수정: " + pickNum)
         }
         this.setState({
           picked : list[pickNum],
           isRolling : true
         })
-        console.log("완료: " + pickNum)
-        console.log("")
       }, 40)
     } else {
       alert('리스트를 2개 이상 채워주세요')

@@ -25,4 +25,10 @@
   width: 10rem;
   height: 4rem;
   cursor: pointer;
+  border-left: 1px solid rgb(250, 214, 12)
+}
+
+.btn-add:hover{
+  background: #fff;
+  color:rgb(250, 214, 12);
 }

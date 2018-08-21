@@ -21,12 +21,24 @@
   border-radius: 1rem;
 }
 
+.btn-roll:hover{
+  background: #fff;
+  color: rgb(250, 214, 12);
+  border: 1px solid rgb(250, 214, 12);
+}
+
 .btn-stop{
+  background: #fff;
+  color: rgb(223, 0, 0);
+  border: 1px solid rgb(223, 0, 0);
+}
+.btn-stop:hover{
   background: rgb(223, 0, 0);
+  color: #fff;
 }
 
 .pick{
   transition-duration: 1.2s;
   transform: rotateX(720deg);
-  font-size: 4rem;
+  font-size: 3rem;
 }
